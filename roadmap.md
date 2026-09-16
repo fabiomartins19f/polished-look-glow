@@ -1,11 +1,10 @@
 # Roadmap — Intranet 1º BI Mec (Es)
 
-- [ ] Usuário escolhe a direção de design (3 opções geradas)
-- [ ] Aplicar tokens da direção escolhida em src/styles.css (verde #0f5b32/#063f25, dourado #d5aa2a, Roboto)
-- [ ] Home: header de marca, navbar (SISCAU, Sistemas Internos, Sistemas Externos, Publicações, Seções, Documentos)
-- [ ] Carrossel hero funcional (slides com título/subtítulo, indicadores, setas) — espelhar o modelo antigo
-- [ ] Acesso rápido (4 atalhos), Destaques (4 cards), Últimas Publicações (4 cards)
-- [ ] Rodapé institucional (marca + colunas de links + sociais)
-- [ ] Widgets flutuantes: tema, chatbot, aniversariantes, aviso, acesso restrito, voltar ao topo
-- [ ] Reusar textos/rótulos reais do portal antigo (views/*.ejs + docs/design-para-lovable.md)
-- [ ] head() com título/descrição próprios da intranet
+- [x] Design refinado espelhando o portal atual (verde #0f5b32, dourado #d5aa2a, Roboto)
+- [x] Cabeçalho institucional com brasão, título e subtítulo
+- [x] Barra de navegação fixa com submenus (SISCAU, Sistemas Internos/Externos, Publicações, Seções, Documentos) e busca
+- [x] Carrossel central e largo com 3 slides, setas, indicadores e troca automática
+- [x] Acesso rápido (4 atalhos), Destaques (4 cards), Últimas Publicações (4 cards)
+- [x] Rodapé institucional com marca, colunas de links, redes e assinatura
+- [x] Botões flutuantes: aniversariantes, acesso restrito, voltar ao topo, assistente virtual
+- [x] Título e descrição próprios da página

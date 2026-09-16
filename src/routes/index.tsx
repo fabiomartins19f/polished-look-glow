@@ -1,24 +1,43 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteCarousel } from "@/components/site/SiteCarousel";
+import { SiteQuickAccess } from "@/components/site/SiteQuickAccess";
+import { SiteHighlights } from "@/components/site/SiteHighlights";
+import { SiteLatestPosts } from "@/components/site/SiteLatestPosts";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteWidgets } from "@/components/site/SiteWidgets";
+
+const TITLE = "Intranet 1º BI Mec (Es) — Portal Institucional";
+const DESCRIPTION =
+  "Portal institucional do 1º Batalhão de Infantaria Mecanizado (Escola): publicações, boletins, documentos, sistemas internos e seções.";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <main>
+        <SiteCarousel />
+        <SiteQuickAccess />
+        <SiteHighlights />
+        <SiteLatestPosts />
+      </main>
+      <SiteFooter />
+      <SiteWidgets />
     </div>
   );
 }
